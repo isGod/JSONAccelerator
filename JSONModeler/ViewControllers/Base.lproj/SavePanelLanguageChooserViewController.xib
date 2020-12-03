@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SavePanelLanguageChooserViewController">
+            <connections>
+                <outlet property="baseClassField" destination="85" id="267"/>
+                <outlet property="baseClassLabel" destination="165" id="266"/>
+                <outlet property="buildForArcButton" destination="361" id="403"/>
+                <outlet property="classPrefixCell" destination="441" id="591"/>
+                <outlet property="classPrefixField" destination="438" id="546"/>
+                <outlet property="classPrefixLabel" destination="439" id="543"/>
+                <outlet property="javaPanel" destination="497" id="540"/>
+                <outlet property="jsonLibraryPanel" destination="0iB-rJ-ake" id="edN-1Q-lbc"/>
+                <outlet property="languageDropDown" destination="3" id="30"/>
+                <outlet property="objectiveCPanel" destination="511" id="541"/>
+                <outlet property="outputLanguageLabel" destination="9" id="71"/>
+                <outlet property="packageNameField" destination="11" id="31"/>
+                <outlet property="packageNameLabel" destination="13" id="32"/>
+                <outlet property="view" destination="1" id="2"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="1" customClass="PanelCustomView">
+            <rect key="frame" x="0.0" y="0.0" width="528" height="158"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3">
+                    <rect key="frame" x="169" y="114" width="191" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Scala" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="s6s-50-mpT" id="4">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="5">
+                            <items>
+                                <menuItem title="Objective-C" id="6"/>
+                                <menuItem title="Java" id="7"/>
+                                <menuItem title="Core Data (Objective-C)" id="414">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Django (Python)" id="413">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Python" id="415">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Scala" state="on" id="s6s-50-mpT"/>
+                            </items>
+                        </menu>
+                        <connections>
+                            <action selector="languagePopUpChanged:" target="-2" id="46"/>
+                        </connections>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedIndex" keyPath="self.languageDropDownIndex" id="49"/>
+                        <outlet property="nextKeyView" destination="9" id="590"/>
+                    </connections>
+                </popUpButton>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                    <rect key="frame" x="-2" y="121" width="167" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Output Language" id="10">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="85">
+                    <rect key="frame" x="86" y="75" width="123" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="MyClass" drawsBackground="YES" id="86">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.baseClassName" id="275">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                <string key="NSNullPlaceholder">BaseClass</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="165">
+                    <rect key="frame" x="-2" y="78" width="85" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Base Class" id="166">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="511" userLabel="Objective C Panel">
+                    <rect key="frame" x="0.0" y="0.0" width="528" height="69"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="497" userLabel="Java Panel">
+                            <rect key="frame" x="-20" y="8" width="548" height="62"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <subviews>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11">
+                                    <rect key="frame" x="191" y="20" width="337" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="com.mycompany.package.model" drawsBackground="YES" id="12">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="self.packageName" id="51">
+                                            <dictionary key="options">
+                                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                <string key="NSNullPlaceholder">com.mycompany.package.model</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </textField>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                                    <rect key="frame" x="18" y="24" width="167" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Package Name" placeholderString="" id="14">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </customView>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="361">
+                            <rect key="frame" x="168" y="32" width="201" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="check" title="Build for ARC" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="362">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.buildForARC" id="409"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </customView>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="438">
+                    <rect key="frame" x="335" y="75" width="160" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="NRD" drawsBackground="YES" id="441">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.classPrefix" id="545">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="439">
+                    <rect key="frame" x="244" y="77" width="94" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Class Prefix" placeholderString="" id="440">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iB-rJ-ake" userLabel="JSON Library Panel">
+                    <rect key="frame" x="0.0" y="9" width="528" height="62"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWq-r4-MFb">
+                            <rect key="frame" x="-2" y="23" width="167" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="JSON Library" placeholderString="" id="Tyz-OK-RmW">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tk-K1-dXS">
+                            <rect key="frame" x="169" y="18" width="191" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <popUpButtonCell key="cell" type="push" title="Akka-HTTP / Spray" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="SY5-Nf-g2S" id="4di-CQ-pT1">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" title="OtherViews" id="1xv-hf-ORL">
+                                    <items>
+                                        <menuItem title="None" id="v2V-UY-J6d">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Play" tag="1" id="bhL-e3-LYs"/>
+                                        <menuItem title="Akka-HTTP / Spray" state="on" id="SY5-Nf-g2S"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <binding destination="-2" name="selectedIndex" keyPath="self.jsonLibraryDropDownIndex" id="kZ6-fx-pu3"/>
+                            </connections>
+                        </popUpButton>
+                    </subviews>
+                </customView>
+            </subviews>
+            <point key="canvasLocation" x="139" y="158"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="15"/>
+    </objects>
+</document>
