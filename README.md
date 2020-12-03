@@ -1,2 +1,3 @@
 # JSON-Accelerator
-1.1.0 (107) - 目前所能找到的最新版本 2018-01-09
+json校验并生成文件
+支持多种语言oc、swift、java ...
